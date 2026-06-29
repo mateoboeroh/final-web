@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madryn Travel - Comunidad de Viajeros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary fs-4" href="../index.html">Madryn Travel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav gap-1 gap-md-3 mt-2 mt-md-0">
+            <li class="nav-item">
+              <a class="nav-link nav-link-premium" href="../index.html">Explorar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-premium" href="destinos.html">Destinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-premium" href="hoteles.html">Hoteles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-premium active" href="comunidad.html">Comunidad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-premium" href="reserva.html">Mis Viajes</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3 mt-2 mt-md-0">
+            <button class="btn btn-link text-primary p-2 d-flex align-items-center" title="Buscar" onclick="alert('Buscador en desarrollo.')">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <div class="rounded-circle overflow-hidden d-flex align-items-center justify-content-center bg-light" style="width: 40px; height: 40px;">
+              <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white" style="width: 40px; height: 40px;">
+              <span class="material-symbols-outlined fs-5">person</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="bg-premium-dark text-white py-5">
+      <div class="container py-3">
+        <h1 class="display-6 fw-bold text-white mb-2">Explora la Comunidad</h1>
+        <p class="lead text-white-50 fs-6 fw-light mb-0" style="max-width: 600px;">
+          Historias, fotografías reales y recomendaciones honestas compartidas por viajeros reales en la costa de Puerto Madryn.
+        </p>
+      </div>
+    </section>
+
+    <main class="container py-5">
+      <div class="row g-4">
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="card card-premium p-4">
+            <h3 class="fw-bold text-primary mb-3 h5">Categorías</h3>
+            <div class="d-flex flex-column gap-2" id="feed-categories">
+              <button class="btn btn-primary text-start px-3 py-2 text-xs" style="font-weight: 600;" onclick="selectFeedCategory('Naturaleza', this)">Naturaleza</button>
+              <button class="btn btn-light text-muted text-start px-3 py-2 text-xs" style="font-weight: 600;" onclick="selectFeedCategory('Aventura', this)">Aventura</button>
+              <button class="btn btn-light text-muted text-start px-3 py-2 text-xs" style="font-weight: 600;" onclick="selectFeedCategory('Gastronomía', this)">Gastronomía</button>
+              <button class="btn btn-light text-muted text-start px-3 py-2 text-xs" style="font-weight: 600;" onclick="selectFeedCategory('Alojamiento', this)">Alojamiento</button>
+            </div>
+          </div>
+        </aside>
+
+        <div class="col-12 col-lg-6 d-flex flex-column gap-4">
+          
+          <div class="d-lg-none overflow-x-auto text-nowrap pb-2" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <div class="d-inline-flex gap-2 mb-2" id="mobile-feed-categories">
+              <button class="btn btn-primary px-3 py-2 text-xs rounded-pill" style="font-weight: 600;" onclick="selectFeedCategory('Naturaleza', this)">Naturaleza</button>
+              <button class="btn btn-light text-muted px-3 py-2 text-xs rounded-pill" style="font-weight: 600;" onclick="selectFeedCategory('Aventura', this)">Aventura</button>
+              <button class="btn btn-light text-muted px-3 py-2 text-xs rounded-pill" style="font-weight: 600;" onclick="selectFeedCategory('Gastronomía', this)">Gastronomía</button>
+              <button class="btn btn-light text-muted px-3 py-2 text-xs rounded-pill" style="font-weight: 600;" onclick="selectFeedCategory('Alojamiento', this)">Alojamiento</button>
+            </div>
+          </div>
+          
+          <article class="card card-premium p-4 gap-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle overflow-hidden bg-light" style="width: 44px; height: 44px;">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white" style="width: 40px; height: 40px;">
+              <span class="material-symbols-outlined fs-5">person</span>
+            </div>
+                </div>
+                <div>
+                  <h4 class="fw-bold text-primary h6 mb-0">Mateo Rossi</h4>
+                  <p class="text-muted small mb-0" style="font-size: 0.65rem;">Hace 2 horas • Puerto Pirámides</p>
+                </div>
+              </div>
+              <span class="badge bg-accent text-primary rounded-pill font-label-md fw-bold py-1.5 px-3" style="font-size: 0.65rem;">Destacado</span>
+            </div>
+
+            <p class="text-muted fw-light mb-0" style="font-size: 0.85rem; line-height: 1.6;">
+              No hay palabras para describir la emoción de ver a estos gigantes tan cerca. Hicimos la excursión embarcada en Puerto Pirámides y tuvimos la suerte de ver a una madre ballena con su cría jugando al lado de la lancha por más de media hora. ¡Las fotos no le hacen justicia!
+            </p>
+
+            <div class="rounded-3 overflow-hidden border" style="height: 320px;">
+              <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/ballenas comunidad.webp" alt="Ballena saltando en el golfo" />
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between border-top pt-3 text-muted small">
+              <div class="d-flex gap-4">
+                <button onclick="toggleLike(this)" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">favorite</span>
+                  <span class="fw-medium">1240</span>
+                </button>
+                <button onclick="alert('Abriendo comentarios del post...')" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">comment</span>
+                  <span class="fw-medium">84</span>
+                </button>
+              </div>
+              <button onclick="alert('¡Destino guardado en tu itinerario de viajes!')" class="btn btn-link p-0 text-primary fw-bold text-decoration-none d-flex align-items-center gap-1.5">
+                <span class="material-symbols-outlined fs-5">bookmark</span>
+                <span class="font-label-md text-uppercase" style="font-size: 0.7rem;">Guardar Destino</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card card-premium p-4 gap-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle overflow-hidden bg-light" style="width: 44px; height: 44px;">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white" style="width: 40px; height: 40px;">
+              <span class="material-symbols-outlined fs-5">person</span>
+            </div>
+                </div>
+                <div>
+                  <h4 class="fw-bold text-primary h6 mb-0">Lucía Fernández</h4>
+                  <p class="text-muted small mb-0" style="font-size: 0.65rem;">Hace 5 horas • Punta Loma</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-muted fw-light mb-0" style="font-size: 0.85rem; line-height: 1.6;">
+              Bucear o hacer snorkel con lobos marinos en Punta Loma es una experiencia absolutamente obligatoria si vienes a Madryn. Son super curiosos, juguetones y nadan a tu alrededor tirándote burbujas. ¡El equipo de instructores locales de buceo fue de primera!
+            </p>
+
+            <div class="rounded-3 overflow-hidden border" style="height: 320px;">
+              <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/joaco y el buzo.webp" alt="Snorkel con lobos marinos" />
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between border-top pt-3 text-muted small">
+              <div class="d-flex gap-4">
+                <button onclick="toggleLike(this)" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">favorite</span>
+                  <span class="fw-medium">945</span>
+                </button>
+                <button onclick="alert('Abriendo comentarios del post...')" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">comment</span>
+                  <span class="fw-medium">32</span>
+                </button>
+              </div>
+              <button onclick="alert('¡Destino guardado en tu itinerario de viajes!')" class="btn btn-link p-0 text-primary fw-bold text-decoration-none d-flex align-items-center gap-1.5">
+                <span class="material-symbols-outlined fs-5">bookmark</span>
+                <span class="font-label-md text-uppercase" style="font-size: 0.7rem;">Guardar Destino</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="card card-premium p-4 gap-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle overflow-hidden bg-light" style="width: 44px; height: 44px;">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white" style="width: 40px; height: 40px;">
+              <span class="material-symbols-outlined fs-5">person</span>
+            </div>
+                </div>
+                <div>
+                  <h4 class="fw-bold text-primary h6 mb-0">Carlos Benítez</h4>
+                  <p class="text-muted small mb-0" style="font-size: 0.65rem;">Ayer • Estancia San Lorenzo</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-muted fw-light mb-0" style="font-size: 0.85rem; line-height: 1.6;">
+              Después de visitar la pinguinera de San Lorenzo, disfrutamos de este cordero patagónico asado a la estaca. La carne crocante por fuera, tierna y jugosa por dentro. ¡El mejor almuerzo de todo el viaje gastronómico en la región!
+            </p>
+
+            <div class="rounded-3 overflow-hidden border" style="height: 320px;">
+              <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/morfi.webp" alt="Cordero patagónico" />
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between border-top pt-3 text-muted small">
+              <div class="d-flex gap-4">
+                <button onclick="toggleLike(this)" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">favorite</span>
+                  <span class="fw-medium">2380</span>
+                </button>
+                <button onclick="alert('Abriendo comentarios del post...')" class="btn btn-link p-0 text-muted text-decoration-none d-flex align-items-center gap-1.5 hover:text-primary">
+                  <span class="material-symbols-outlined fs-5">comment</span>
+                  <span class="fw-medium">112</span>
+                </button>
+              </div>
+              <button onclick="alert('¡Destino guardado en tu itinerario de viajes!')" class="btn btn-link p-0 text-primary fw-bold text-decoration-none d-flex align-items-center gap-1.5">
+                <span class="material-symbols-outlined fs-5">bookmark</span>
+                <span class="font-label-md text-uppercase" style="font-size: 0.7rem">Guardar Destino</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <aside class="col-lg-3 d-none d-lg-flex flex-column gap-4">
+          <div class="card card-premium p-4">
+            <h3 class="fw-bold text-primary mb-3 h5">Tendencias en Madryn</h3>
+            
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                  <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/avistaje ballenas.webp" alt="Trend 1 ballenas" />
+                </div>
+                <div>
+                  <span class="text-xs fw-bold text-primary d-block">#AvistajeBallenas</span>
+                  <p class="text-muted mb-0" style="font-size: 0.65rem;">14k búsquedas hoy</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                  <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/doradillo atardecer.webp" alt="Trend 2 El Doradillo" />
+                </div>
+                <div>
+                  <span class="text-xs fw-bold text-primary d-block">#ElDoradilloAtardecer</span>
+                  <p class="text-muted mb-0" style="font-size: 0.65rem;">8k búsquedas hoy</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded overflow-hidden flex-shrink-0" style="width: 48px; height: 48px;">
+                  <img class="w-100 h-100 object-fit-cover" src="../assets/img/img comunidad/pinguinos.webp" alt="Trend 3 Pinguinos" />
+                </div>
+                <div>
+                  <span class="text-xs fw-bold text-primary d-block">#PinguinosPuntaTombo</span>
+                  <p class="text-muted mb-0" style="font-size: 0.65rem;">12k búsquedas hoy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-premium p-4">
+            <h3 class="fw-bold text-primary mb-3 h5">Expertos Locales</h3>
+            
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center justify-content-between gap-2">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="rounded-circle bg-light" style="width: 36px; height: 36px;">
+                    <div class="rounded-circle d-flex align-items-center justify-content-center bg-danger text-white" style="width: 40px; height: 40px;">
+                     <span class="material-symbols-outlined fs-5">person</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="fw-bold text-primary d-block text-xs">Sofía Martínez</span>
+                    <span class="text-muted" style="font-size: 0.6rem;">Bióloga Marina</span>
+                  </div>
+                </div>
+                <button onclick="toggleFollow(this)" class="btn btn-sm btn-outline-primary rounded-pill px-2.5 py-0.5 fw-bold" style="font-size: 0.6rem;">Seguir</button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between gap-2">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="rounded-circle bg-light" style="width: 36px; height: 36px;">
+                    <div class="rounded-circle d-flex align-items-center  justify-content-center bg-danger text-white" style="width: 40px; height: 40px;">
+                      <span class="material-symbols-outlined fs-5">person</span>
+                      </div>
+                  </div>
+                  <div>
+                    <span class="fw-bold text-primary d-block text-xs">Juan Guía Patagónico</span>
+                    <span class="text-muted" style="font-size: 0.6rem;">Guía de Aventura</span>
+                  </div>
+                </div>
+                <button onclick="toggleFollow(this)" class="btn btn-sm btn-outline-primary rounded-pill px-2.5 py-0.5 fw-bold" style="font-size: 0.6rem;">Seguir</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <button onclick="alert('Iniciando panel para publicar tu historia y fotos en la comunidad de Madryn Travel...')" class="btn-fab" title="Nueva Publicación" style="width: 56px; height: 56px; padding: 0; justify-content: center;">
+      <span class="material-symbols-outlined fs-3">add</span>
+    </button>
+
+    <footer class="bg-premium-dark text-white py-5 mt-5 border-top border-light border-opacity-10">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-4 text-center text-md-start">
+            <span class="fw-bold fs-4 text-white">Madryn Travel</span>
+            <p class="text-white-50 text-xs small mt-2 mb-0">© 2026 Madryn Travel. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-5">
+            <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start gap-4 mb-0 small">
+              <li><a href="#" class="text-white-50 text-decoration-none hover:text-white transition-colors">Nosotros</a></li>
+              <li><a href="#" class="text-white-50 text-decoration-none hover:text-white transition-colors">Términos de Servicio</a></li>
+              <li><a href="#" class="text-white-50 text-decoration-none hover:text-white transition-colors">Política de Privacidad</a></li>
+              <li><a href="#" class="text-white-50 text-decoration-none hover:text-white transition-colors">Soporte</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 text-center text-md-end d-flex justify-content-center justify-content-md-end gap-2">
+            <button class="btn btn-outline-light border-light border-opacity-25 rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Idioma" onclick="alert('Cambio de idioma en desarrollo.')">
+              <span class="material-symbols-outlined fs-5">public</span>
+            </button>
+            <button class="btn btn-outline-light border-light border-opacity-25 rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="Compartir" onclick="alert('¡Enlace de compartir copiado al portapapeles!')">
+              <span class="material-symbols-outlined fs-5">share</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="../assets/js/comunidad.js"></script>
+  </body>
+</html>
